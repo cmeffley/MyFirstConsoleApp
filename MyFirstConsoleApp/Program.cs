@@ -11,7 +11,12 @@ namespace MyFirstConsoleApp
 
             //get data from a user
             Console.WriteLine("Please Enter Your Name");
+            //whatever someone types in, will be set to name, must be string because that's what I declared
             name = Console.ReadLine();
+
+            //console.log(`my name is ${name}); string interpolation in JS
+            Console.WriteLine($"Hello, {name}"); //same as above, but in C sharp
+            Console.WriteLine("Hello, " + name); //string concatenation
 
             //name = "7";
 
@@ -65,8 +70,31 @@ namespace MyFirstConsoleApp
 
             //csharp one equal(=) for set and two for equality
 
+            if (name == "Nathan")
+            {
+                Console.WriteLine("Hey it me");
+            }
+            else
+            {
+                Console.WriteLine("Not me");
+            }
 
+            //ternary (not technically control flow like the if statement above)
+            var greeting = name == "Nathan" ? "It is you." : "It is not you";
 
+            //anonymous types
+            var nathan = new { Name = "Nathan", IsTeacher = true };
+
+            //nathan.Name = "Steve"; can't change things in the object in anonymous types (immutable)
+
+            //objects break the rules sometimes because of being a reference type
+            object animalType = "Dog";  //object wraps "around" the string and the object changes (I think)
+            animalType = 45;
+
+            //boxing moves values to the heap
+            if (animalType.ToString() == "Dog")
+            {
+            } 
         }
     }
 }
